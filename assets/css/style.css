@@ -1,0 +1,45 @@
+/* color variables */
+:root {
+	--primary-color: blue;
+	--dark-color: black;
+	--light-color: white;
+	--lose-color: red;
+	--win-color: green;
+	--modal-duration: 1s;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.6;
+	background: #fff;
+	color: #333;
+}
+
+.container {
+	max-width: 1100px;
+	margin: auto;
+	overflow: hidden;
+	padding: 0 2rem;
+	text-align: center;
+}
+
+.restart-btn {
+	display: inline-block;
+	background: var(--light-color);
+	color: #333;
+	padding: 0.4rem 1.3rem;
+	font-size: 1rem;
+	cursor: pointer;
+	outline: none;
+	border: none;
+}
+
+.restart-btn:hover {
+	background: var(--primary-color);
+}
