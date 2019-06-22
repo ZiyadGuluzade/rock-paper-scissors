@@ -16,6 +16,8 @@ function play(e) {
     const playerChoice = e.target.id;
     const computerChoice = getComputerChoice();
     const winner = getWinner(playerChoice, computerChoice);
+
+    console.log(playerChoice, computerChoice, winner);
 }
 
 function getComputerChoice() {
@@ -34,13 +36,13 @@ function getWinner(p, c) {
     if(p ===c) {
         return 'draw';
     } else if(p === 'rock') {
-        if (c === 'paper') {
+        if(c === 'paper') {
             return 'computer';
         } else {
             return 'player';
         }
     } else if(p === 'paper') {
-        if (c === 'scissors') {
+        if(c === 'scissors') {
             return 'computer';
         } else {
             return 'player';
@@ -51,6 +53,34 @@ function getWinner(p, c) {
         } else {
             return 'player';
         }
+    }
+}
+
+function showWinner(winner, computerChoice) {
+    if(winner === 'player') {
+        //increment player score
+        scoreboard.player++;
+        //modal result
+        result.innerHTML = `
+            <h1 class="text-win">You Win</h1>
+            <i class="fas fa-hand-${computerChoice} fa-10x"></i>
+            <p>Computer chose <strong>${computerChoice}</strong></p>
+            `;
+    } else if(winner = 'computer') {
+        //increment computer score
+        scoreboard.computer++;
+        //modal result
+        result.innerHTML = `
+            <h1 class="text-lose">You Lose</h1>
+            <i class="fas fa-hand-${computerChoice} fa-10x"></i>
+            <p>Computer chose <strong>${computerChoice}</strong></p>
+            `;
+    } else {
+        result.innerHTML = `
+            <h1>It is A Draw</h1>
+            <i class="fas fa-hand-${computerChoice} fa-10x"></i>
+            <p>Computer chose <strong>${computerChoice}</strong></p>
+            `;
     }
 }
 // event listeners
