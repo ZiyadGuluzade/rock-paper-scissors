@@ -38,6 +38,7 @@ body {
 	cursor: pointer;
 	outline: none;
 	border: none;
+	margin-bottom: 1rem;
 }
 
 .restart-btn:hover {
@@ -96,12 +97,12 @@ body {
 /* Media quieries */
 @media (max-width: 768px) {
 	.choice {
-		font-size: 110px;
+		width: 110px;
 	}
 }
 
 @media (max-width: 425px) {
 	.choice {
-		font-size: 70px;
+		width: 70px;
 	}
 }
